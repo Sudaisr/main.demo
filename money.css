@@ -1,0 +1,52 @@
+/* Bright Star Tailor - Private Money Ledger
+   Owner-only totals banner and money summary cards. */
+
+.money-private-banner { padding: 27px 30px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #fff; border: 1px solid rgba(230,190,84,.35); border-radius: 21px; background: radial-gradient(circle at 12% 15%, rgba(234,194,82,.22), transparent 28%), linear-gradient(120deg, #06192c, #133f66); box-shadow: 0 16px 38px rgba(7,31,55,.2); }
+.money-private-banner h3 { margin: 3px 0; font-size: 24px; }
+.money-private-banner p { margin: 0; color: rgba(255,255,255,.72); font-size: 11px; }
+.money-lock-symbol { width: 65px; height: 65px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 19px; color: #173550; background: linear-gradient(145deg, #f5d675, #c8962c); font-size: 28px; box-shadow: 0 10px 28px rgba(0,0,0,.2); }
+.money-summary-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 14px; }
+.money-summary-grid article { padding: 14px; border: 1px solid #dce4eb; border-radius: 14px; background: #fff; box-shadow: 0 7px 20px rgba(21,50,79,.05); }
+.money-summary-grid small, .money-summary-grid strong { display: block; }
+.money-summary-grid small { color: var(--muted); font-size: 9px; }
+.money-summary-grid strong { margin-top: 3px; color: var(--navy); font-size: 15px; }
+.money-summary-grid .received { background: #effaf5; }
+.money-summary-grid .received strong { color: #16805e; }
+.money-summary-grid .due { background: #fff2f2; }
+.money-summary-grid .due strong { color: #b5414c; }
+.money-summary-grid .cost { background: #f5f6f8; }
+.money-summary-grid .profit { background: #fff9e7; }
+.money-summary-grid .profit strong { color: #8a6314; }
+.money-records-list { display: grid; gap: 9px; margin-top: 13px; }
+.money-record-row { padding: 12px 13px; display: grid; grid-template-columns: minmax(190px, 1.4fr) repeat(4, minmax(88px, .65fr)) auto; align-items: center; gap: 10px; border: 1px solid #e0e6ec; border-radius: 14px; background: #fbfcfd; }
+.money-record-row > div > small, .money-record-row > div > strong { display: block; }
+.money-record-row > div > small { color: var(--muted); font-size: 9px; }
+.money-record-row > div > strong { margin-top: 2px; font-size: 12px; }
+.money-customer { display: flex; align-items: center; gap: 9px; min-width: 0; }
+.money-customer div { min-width: 0; }
+.money-customer strong, .money-customer small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.money-record-row .received strong { color: var(--green); }
+.money-record-row .due strong { color: var(--red); }
+.money-record-row .profit strong { color: #8b6718; }
+.private-money-button { padding: 9px 11px; border: 0; border-radius: 10px; color: #fff; background: linear-gradient(135deg, #173d6b, #071a2d); font-weight: 800; white-space: nowrap; }
+.private-modal-heading { margin-bottom: 7px; display: flex; align-items: center; gap: 10px; }
+.private-modal-heading > span { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 13px; background: #fff4cf; font-size: 20px; }
+.private-modal-heading small { color: #a77e1f; font-size: 8px; font-weight: 900; letter-spacing: .12em; }
+.money-live-calculation { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.money-live-calculation div { padding: 11px; border: 1px solid #dce4eb; border-radius: 11px; background: #f5f8fb; }
+.money-live-calculation small, .money-live-calculation strong { display: block; }
+.money-live-calculation small { color: var(--muted); font-size: 9px; }
+.money-live-calculation strong { margin-top: 2px; color: var(--navy); }
+
+.app-location-footer { margin: 5px 38px 25px; padding: 12px 17px; display: flex; align-items: center; justify-content: center; gap: 7px; color: #6f7c89; border: 1px solid rgba(220,226,232,.9); border-radius: 13px; background: rgba(255,255,255,.65); font-size: 10px; direction: ltr; text-align: center; }
+.app-location-footer span { color: #b18427; }
+.app-location-footer strong { color: var(--navy); }
+
+.filters { display: grid; grid-template-columns: 1fr 190px; gap: 12px; margin-bottom: 10px; }
+.search-box { display: flex; align-items: center; border: 1px solid #d9e0e8; background: #fbfcfd; border-radius: 11px; padding-right: 12px; }
+.search-box span { font: 22px/1 Arial; color: #8090a0; }
+.search-box input { border: 0; background: transparent; box-shadow: none !important; }
+.records-list.spacious .record-row { padding-block: 17px; }
+
+.dues-banner { padding: 25px 28px; margin-bottom: 20px; border-radius: 19px; color: #fff; background: linear-gradient(120deg, #a93442, #d25c55); display: flex; align-items: center; justify-content: space-between; box-shadow: 0 12px 30px rgba(177,52,65,.18); }
+.completed-banner { padding: 25px 28px; margin-bottom: 20px; border-radius: 19px; color: #fff; background: radial-gradient(circle at 12% 20%, rgba(226,184,78,.2), transparent 28%), linear-gradient(120deg, #06304f, #1d765d); display: flex; align-items: center; justify-content: space-between; box-shadow: 0 12px 30px rgba(15,80,69,.18); }

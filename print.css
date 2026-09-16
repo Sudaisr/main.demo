@@ -1,0 +1,191 @@
+/* Bright Star Tailor - Print Styles
+   Receipt and measurement-slip @media print rules. */
+
+/* Added Bright Star slip diagram options */
+.design-sketch.pocket-rounded { border-radius: 3px 3px 12px 12px; }
+.design-sketch.side-pocket-slant::before { content: ""; position: absolute; width: 8px; height: 38px; border-left: 3px solid currentColor; transform: rotate(28deg); }
+.design-sketch.pancha-simple::before { content: ""; position: absolute; width: 44px; height: 34px; border: 3px solid currentColor; border-top: 0; }
+.design-sketch.pancha-band::before { content: ""; position: absolute; width: 44px; height: 34px; border: 3px solid currentColor; border-top: 8px double currentColor; }
+.design-sketch.pancha-zigzag::before { content: ""; position: absolute; width: 44px; height: 34px; border: 3px solid currentColor; border-top: 7px ridge currentColor; }
+
+@media print {
+  html, body { width: 100% !important; height: auto !important; margin: 0 !important; padding: 0 !important; background: #fff !important; }
+  body > *:not(#printArea) { display: none !important; }
+  #printArea { display: block !important; width: 100% !important; color: #111; background: #fff; font-family: "Nafees Web Naskh", Tahoma, "Noto Nastaliq Urdu", sans-serif; font-size: 9px; line-height: 1.2; direction: rtl; }
+  .print-sheet { box-sizing: border-box; width: 100%; padding: 1mm 2mm; break-after: avoid-page; page-break-after: avoid; }
+  .print-header { position: relative; min-height: 18mm; padding: 0 23mm 2mm; text-align: center; border-bottom: 2px double #173d6b; break-inside: avoid; page-break-inside: avoid; }
+  .print-brand-logo { position: absolute; top: 0; right: 1mm; width: 17mm; height: 17mm; display: block; margin: 0; object-fit: cover; border: 1px solid #cfa63e; border-radius: 50%; }
+  .print-header h1 { margin: 0; color: #173d6b; font-size: 19px; line-height: 1.15; }
+  .print-header .print-name-en { margin: 0; color: #9b771f; font: 800 8px/1.1 "Segoe UI", Arial, sans-serif; letter-spacing: .1em; direction: ltr; }
+  .print-header p { margin: 0; font-size: 8px; line-height: 1.15; }
+  .print-header small { display: block; margin-top: 1px; color: #444; font-size: 7px; line-height: 1.25; direction: rtl; }
+  .print-shop-contact { margin-top: 1mm; display: flex; align-items: center; justify-content: center; gap: 3px; direction: ltr; font: 700 7px/1.1 "Segoe UI", Arial, sans-serif; }
+  .print-shop-contact .whatsapp-mark { padding: 1px 4px; color: #fff; border-radius: 7px; background: #1d9f56; }
+  .print-shop-contact .easypaisa-logo { width: 16mm; height: 4.5mm; margin-left: 4px; object-fit: contain; }
+  .print-meta { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; margin: 2mm 0; break-inside: avoid; page-break-inside: avoid; }
+  .print-meta div { min-height: 8mm; box-sizing: border-box; padding: 2px 3px; border: 1px solid #888; }
+  .print-meta small { display: block; color: #555; font-size: 7px; line-height: 1.1; }
+  .print-meta strong { display: block; margin-top: 1px; font-size: 8px; line-height: 1.15; }
+  .print-section { margin: 0; break-inside: avoid; page-break-inside: avoid; }
+  .print-section h3 { margin: 1.5mm 0 .8mm; padding: 2px 5px; color: #fff; background: #173d6b; font-size: 9px; line-height: 1.2; }
+  .print-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  .print-table th, .print-table td { height: 7mm; box-sizing: border-box; border: 1px solid #777; padding: 2px 3px; text-align: center; font-size: 8px; line-height: 1.15; overflow-wrap: anywhere; }
+  .print-table th { background: #eaf2fb; }
+  .print-notes { min-height: 9mm; box-sizing: border-box; padding: 3px 5px; border: 1px solid #888; font-size: 8px; }
+  .print-footer { display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 2mm; padding-top: 2mm; border-top: 1px solid #777; font-size: 8px; break-inside: avoid; page-break-inside: avoid; }
+  .print-footer small { width: 100%; margin-top: 1.5mm; text-align: center; font-size: 7px; line-height: 1.25; direction: ltr; }
+  .measurement-print-sheet .print-header h2 { margin: 1px 0; color: #222; font-size: 10px; line-height: 1.1; }
+  .design-print-table th, .design-print-table td { height: 8mm; }
+  @page { size: A4 portrait; margin: 4mm; }
+}
+
+
+/* Owner-only direct login */
+.owner-only-login { display: block; margin-top: 18px; }
+.owner-direct-button { width: 100%; min-height: 74px; display: flex; align-items: center; justify-content: center; gap: 14px; font-size: 18px; }
+.owner-direct-button span:last-child { display: grid; gap: 3px; }
+.owner-direct-button small { display: block; font-size: 11px; font-weight: 600; opacity: .85; }
+.instruction-field textarea { min-height: 150px; resize: vertical; }
+.phone-link { color: #128c4a; font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
+
+@media print {
+  @page { size: 105mm 190mm; margin: 3mm; }
+  #printArea { font-family: "Nafees Web Naskh", Tahoma, "Noto Nastaliq Urdu", Arial, sans-serif; }
+  .real-tailor-slip { width: 99mm !important; min-height: 180mm; margin: 0 auto; padding: 2mm !important; border: 1px solid #444; color: #222; background: #fff; }
+  .real-slip-header { border-bottom: 1.5px solid #34445c; padding-bottom: 1mm; }
+  .real-slip-brand { display: flex; direction: ltr; align-items: center; justify-content: space-between; gap: 3mm; }
+  .real-slip-brand > strong { color: #435876; font: 900 15px/.82 Arial, sans-serif; letter-spacing: .04em; }
+  .real-slip-brand h1 { margin: 0; color: #34445c; font-size: 18px; line-height: 1; direction: rtl; }
+  .real-slip-contact { display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 2mm; padding: .8mm 1.5mm; color: #fff; background: #435876; direction: ltr; font-size: 7px; }
+  .real-slip-contact span { direction: rtl; text-align: right; }
+  .real-slip-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 1mm 3mm; padding: 2mm 0; }
+  .real-slip-meta label { min-height: 6mm; display: grid; grid-template-columns: auto 1fr; align-items: end; gap: 2mm; border-bottom: 1px solid #555; font-size: 8px; }
+  .real-slip-meta label span { white-space: nowrap; font-weight: 800; }
+  .real-slip-meta label b { min-height: 4mm; font-size: 8px; }
+  .real-slip-phone { grid-column: 1 / -1; }
+  .real-slip-body { display: grid; grid-template-columns: 32mm 1fr; gap: 2mm; direction: ltr; }
+  .real-measure-table { width: 100%; border-collapse: collapse; direction: rtl; table-layout: fixed; }
+  .real-measure-table td { height: 7.2mm; padding: 1mm; border: 1px solid #555; font-size: 8px; }
+  .real-measure-table td:first-child { width: 56%; font-weight: 800; text-align: right; }
+  .real-measure-table td:last-child { text-align: center; font-size: 10px; }
+  .real-design-diagrams { display: grid; grid-template-columns: repeat(2, 1fr); align-content: start; gap: 1.2mm; direction: rtl; }
+  .slip-design-item { min-height: 19mm; display: grid; place-items: center; align-content: center; padding: .8mm; border: 1px solid #666; overflow: hidden; }
+  .slip-design-name { font-size: 7px; font-weight: 800; }
+  .slip-design-item b { font-size: 6.5px; font-weight: 700; }
+  .slip-design-item .design-sketch { width: 17mm; height: 10mm; transform: scale(.9); box-shadow: none; border-radius: 0; }
+  .real-slip-notes { min-height: 22mm; margin-top: 2mm; padding: 1.5mm; border: 1px solid #555; }
+  .real-slip-notes strong { display: block; font-size: 8px; }
+  .real-slip-notes p { margin: 1mm 0 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 8px; line-height: 1.5; }
+  .real-slip-footer { margin-top: 1.5mm; padding: 1mm; border: 1px solid #555; text-align: center; font-size: 7px; font-weight: 800; }
+}
+
+/* Text-only branding and TIMER GERA measurement slip */
+.text-logo, .text-brand-mark { display:grid; place-items:center; font-family:Arial,sans-serif; font-weight:900; letter-spacing:.04em; color:#173d6b; background:#fff; border:2px solid #173d6b; }
+.text-logo { font-size:24px; }
+.text-brand-mark { width:46px; height:46px; border-radius:12px; font-size:14px; }
+
+@media print {
+  @page { size: A4 portrait; margin: 7mm; }
+  .timer-gera-slip { width: 196mm !important; min-height: 277mm; margin: 0 auto; padding: 3mm !important; border: 1px solid #222; color:#111; background:#fff; box-sizing:border-box; font-family:"Nafees Web Naskh",Tahoma,"Noto Nastaliq Urdu",Arial,sans-serif; }
+  .timer-slip-header { display:grid; grid-template-columns:1fr 1.4fr 1fr; align-items:center; gap:2mm 3mm; padding:2mm 2mm 3mm; border-bottom:1px solid #222; }
+  .timer-mobiles { display:flex; flex-direction:column; align-items:flex-start; gap:.5mm; direction:ltr; font-family:Arial,sans-serif; font-weight:800; font-size:10px; white-space:nowrap; }
+  .timer-mobiles span { font-size:9px; font-weight:700; }
+  .timer-main-title { display:flex; flex-direction:column; align-items:center; text-align:center; gap:.5mm; }
+  .timer-name-en { font-family:"Brush Script MT",cursive,Arial,sans-serif; font-weight:900; font-size:20px; line-height:1.1; }
+  .timer-name-arrow { font-size:11px; line-height:1; }
+  .timer-name-place { font-family:Arial,sans-serif; font-weight:800; font-size:11px; letter-spacing:.05em; }
+  .timer-name-ur { direction:rtl; text-align:center; font-weight:900; font-size:20px; line-height:1.1; }
+  .timer-address { grid-column:1/-1; display:flex; justify-content:center; padding-top:2mm; border-top:1px solid #bbb; font-size:11px; }
+  .timer-address b { direction:rtl; text-align:center; font-weight:800; }
+  .timer-customer-meta { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid #222; border-bottom:1px solid #222; }
+  .timer-customer-meta label { display:flex; align-items:baseline; gap:2.5mm; padding:2.8mm 4mm; border-block-end:1px solid #d6dee6; min-height:8mm; }
+  .timer-customer-meta label:nth-child(odd) { border-inline-end:1px solid #d6dee6; }
+  .timer-customer-meta label:nth-last-child(-n+2) { border-block-end:none; }
+  .timer-customer-meta span { flex:0 0 auto; font-weight:800; font-size:10px; color:#33465c; background:#eef4fa; padding:1mm 2.5mm; border-radius:1mm; white-space:nowrap; }
+  .timer-customer-meta b { flex:1; text-align:center; font-size:12px; font-weight:800; border-bottom:1px dashed #aab2bc; padding-bottom:0.8mm; }
+  .timer-slip-content { display:grid; grid-template-columns:38% 62%; direction:ltr; border:1px solid #222; }
+  .timer-measurements, .timer-designs { direction:rtl; }
+  .timer-measurements { border-right:1px solid #222; display:flex; flex-direction:column; }
+  .timer-measurements h3, .timer-designs h3 { margin:0; padding:2mm; border-bottom:1px solid #222; text-align:center; font-size:12px; }
+  .timer-designs-head { display:flex; border-bottom:1px solid #222; }
+  .timer-designs-field { flex:1; display:flex; align-items:center; justify-content:center; gap:4mm; padding:2mm; font-size:13px; font-weight:800; }
+  .timer-designs-field:first-child { border-left:1px solid #222; }
+  .timer-designs-field b { flex:1; max-width:45mm; min-height:6mm; border:1px solid #444; border-radius:2px; }
+  .timer-measurements h3 { color:#fff; background:#111; }
+  .timer-measurements h3 small, .timer-designs h3 small { font:700 8px Arial,sans-serif; }
+  .timer-measurements table { width:100%; height:100%; border-collapse:collapse; table-layout:fixed; }
+  .timer-measurements tbody { display:flex; flex-direction:column; height:100%; }
+  .timer-measurements tr { display:flex; flex:1 1 0; }
+  .timer-measurements th, .timer-measurements td { flex:1 1 0; display:flex; align-items:center; justify-content:center; padding:1mm; border:1px solid #555; text-align:center; font-size:10px; }
+  .timer-measurements th:first-child, .timer-measurements td:first-child { flex:0 0 16%; }
+  .timer-measurements th:last-child, .timer-measurements td:last-child { flex:0 0 28%; }
+  .measure-name { font-weight:800; }
+  .measure-value { font-size:12px !important; direction:ltr; }
+  .timer-design-grid { display:grid; grid-template-columns:repeat(3,1fr); }
+  .timer-design-grid .slip-design-item { min-height:34mm; padding:1.5mm; border:0; border-left:1px solid #555; border-bottom:1px solid #555; display:grid; grid-template-rows:1fr auto; place-items:center; overflow:hidden; }
+  .timer-design-grid .slip-design-item:nth-child(3n) { border-left:0; }
+  .timer-design-grid .slip-design-name { font-size:9px; font-weight:800; }
+  .timer-design-grid .slip-design-item b { font-size:7px; text-align:center; }
+  .timer-design-grid .design-sketch { width:28mm; height:17mm; transform:scale(1); box-shadow:none; border-radius:0; }
+  .timer-design-grid .print-design-image { width: 29mm; height: 22mm; display:block; object-fit:contain; }
+  .timer-design-grid .slip-design-item { min-height: 24mm; padding: .7mm; }
+  .timer-design-grid .print-design-image { width: 25mm; height: 17mm; }
+  .timer-notes { min-height:46mm; margin-top:3mm; padding:3mm; border:1px solid #222; }
+  .timer-notes strong { display:block; font-size:10px; }
+  .timer-notes p { min-height:35mm; margin:2mm 0 0; padding-top:1mm; white-space:pre-wrap; overflow-wrap:anywhere; font-size:10px; line-height:1.8; background:repeating-linear-gradient(to bottom, transparent 0, transparent 7mm, #888 7.1mm, transparent 7.2mm); }
+  .timer-slip-footer { margin-top:3mm; padding:2mm; border-top:1px solid #222; border-bottom:1px solid #222; text-align:center; font-size:8px; font-weight:800; }
+}
+
+/* Final requested measurement/print refinements */
+#newOrderPage .measurement-form-heading .eyebrow,
+#newOrderPage .measurement-form-heading h3,
+#newOrderPage .measurement-ledger-title,
+#newOrderPage .measure-row > span,
+#newOrderPage .visual-board-title strong,
+#newOrderPage .design-visual-group legend,
+#newOrderPage .design-choice b,
+#newOrderPage .instruction-field > span {
+  font-weight: 900 !important;
+}
+#newOrderPage .measurement-form-heading .eyebrow { font-size: 1.15rem !important; letter-spacing: .02em; }
+#newOrderPage .measurement-form-heading h3 { font-size: clamp(1.55rem, 3vw, 2.15rem) !important; }
+#newOrderPage .measurement-ledger-title { font-size: 1.35rem !important; }
+#newOrderPage .measure-row > span { font-size: 1.28rem !important; }
+#newOrderPage .measure-row input { font-size: 1.25rem !important; font-weight: 800 !important; min-height: 48px; }
+#newOrderPage .visual-board-title strong,
+#newOrderPage .design-visual-group legend { font-size: 1.25rem !important; }
+#newOrderPage .design-choice b { font-size: 1.05rem !important; }
+#newOrderPage .instruction-field textarea { font-size: 1.15rem !important; font-weight: 700; min-height: 190px; }
+
+@media print {
+  .timer-gera-slip { position: relative; min-height: 277mm !important; }
+  .dev-badge { position:absolute; top:1.5mm; right:1.5mm; width:14mm; height:14mm; opacity:.92; z-index:5; }
+  .timer-slip-header { grid-template-columns: 1fr 1.4fr 1fr !important; align-items:center !important; }
+  .timer-mobiles { font-size: 13px !important; font-weight: 900 !important; }
+  .timer-mobiles span { font-size: 12px !important; font-weight: 800 !important; }
+  .timer-name-en { font-size: 26px !important; font-weight: 950 !important; }
+  .timer-name-arrow { font-size: 14px !important; }
+  .timer-name-place { font-size: 14px !important; font-weight: 900 !important; }
+  .timer-name-ur { font-size: 26px !important; font-weight: 950 !important; }
+  .timer-address { grid-column: 1 / -1; display:flex !important; justify-content:center !important; align-items:center !important; font-size: 15px !important; font-weight: 900 !important; }
+  .timer-address b { font-size: 15px !important; font-weight: 900 !important; }
+  .timer-customer-meta label span,
+  .timer-customer-meta label b { font-size: 15px !important; font-weight: 950 !important; }
+  .timer-measurements h3,
+  .timer-designs h3 { font-size: 18px !important; font-weight: 950 !important; }
+  .timer-designs-field { font-size: 17px !important; font-weight: 950 !important; }
+  .timer-measurements th,
+  .timer-measurements td { font-size: 16px !important; font-weight: 950 !important; padding: 2.2mm 1.2mm !important; }
+  .timer-measurements .measure-name { font-size: 18px !important; }
+  .timer-measurements .measure-value { font-size: 18px !important; }
+  .slip-design-name { font-size: 15px !important; font-weight: 950 !important; }
+  .slip-design-item b { font-size: 12px !important; font-weight: 900 !important; }
+  .timer-notes strong { font-size: 17px !important; font-weight: 950 !important; }
+  .timer-notes p { font-size: 15px !important; font-weight: 700 !important; min-height: 31mm !important; }
+  .timer-slip-footer { margin-top:3mm; padding-top:2mm; border-top:1px solid #222; }
+  .timer-disclaimer { text-align:center; font-size:10px; font-weight:800; margin-bottom:3mm; }
+  .timer-signature { text-align:center; font-size:11px; font-weight:800; }
+  .developer-credit { text-align:center; display:flex; flex-direction:column; gap:.8mm; font-family:Arial,sans-serif; direction:ltr; }
+  .developer-credit strong { font-size:13px; font-weight:900; }
+  .developer-credit span { font-size:11px; font-weight:700; }
+}

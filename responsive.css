@@ -1,0 +1,142 @@
+/* Bright Star Tailor - Responsive Breakpoints
+   Tablet and mobile layout adjustments. */
+
+@media (max-width: 1120px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .form-grid.four { grid-template-columns: repeat(2, 1fr); }
+  .payment-fields { grid-template-columns: repeat(3, 1fr); }
+  .measurement-grid { grid-template-columns: repeat(4, 1fr); }
+  .tailor-slip-layout { grid-template-columns: 1fr; }
+  .money-summary-grid { grid-template-columns: repeat(3, 1fr); }
+  .money-record-row { grid-template-columns: minmax(180px, 1.3fr) repeat(2, minmax(90px, .7fr)) auto; }
+  .money-record-row .profit, .money-record-row .due { display: none; }
+}
+
+@media (max-width: 850px) {
+  .login-screen { padding: 22px; }
+  .login-stage { max-width: 520px; min-height: 0; grid-template-columns: 1fr; border-radius: 29px; }
+  .login-showcase { min-height: 215px; padding: 30px 31px; justify-content: flex-start; }
+  .login-showcase h2 { margin: 14px 0 6px; font-size: 27px; line-height: 1.35; }
+  .login-showcase > p { font-size: 11px; }
+  .showcase-features { margin-top: 14px; }
+  .showcase-features span { padding: 5px 8px; font-size: 9px; }
+  .tailor-line { display: none; }
+  .login-card { padding: 34px 35px 27px; border-radius: 27px 27px 0 0; box-shadow: 0 -18px 50px rgba(0,8,20,.2); }
+  .sidebar { transform: translateX(105%); transition: transform .25s ease; }
+  .sidebar.open { transform: none; }
+  .sidebar-overlay { position: fixed; inset: 0; z-index: 25; background: rgba(7,23,40,.45); }
+  .sidebar-overlay.open { display: block; }
+  .main-content { margin-right: 0; }
+  .menu-button { display: grid; place-items: center; }
+  .topbar { padding-inline: 20px; }
+  .guest-mode-notice { margin-inline: 20px; }
+  .page { padding: 23px 20px 35px; }
+  .record-row { grid-template-columns: 1fr auto; gap: 10px; padding: 15px 2px; }
+  .record-row .record-cell { display: none; }
+  .row-actions { grid-column: 1 / -1; justify-content: flex-start; padding-right: 51px; }
+  .row-actions { flex-wrap: wrap; }
+  .status-update-row { grid-template-columns: 1fr; }
+  .detail-grid { grid-template-columns: repeat(2, 1fr); }
+  .dashboard-search-card { grid-template-columns: 1fr; }
+  .dashboard-search-results { grid-column: 1; }
+  .progress-heading { align-items: stretch; flex-direction: column; }
+  .money-record-row { grid-template-columns: 1fr 1fr auto; }
+  .money-record-row > .cost, .money-record-row > .profit { display: none; }
+}
+
+@media (max-width: 620px) {
+  .login-screen { padding: 13px; align-items: center; }
+  .login-stage { max-height: calc(100vh - 26px); overflow-y: auto; border-radius: 25px; }
+  .login-showcase { min-height: 164px; padding: 22px 21px 26px; }
+  .showcase-badge { padding: 5px 8px; font-size: 7px; }
+  .login-showcase h2 { margin: 10px 0 4px; font-size: 22px; }
+  .login-showcase > p, .showcase-features { display: none; }
+  .login-card { padding: 29px 20px 20px; border-radius: 24px 24px 0 0; }
+  .logo-orbit { width: 103px; height: 103px; margin-bottom: 9px; }
+  .login-logo { width: 87px; height: 87px; }
+  .security-chip { top: 14px; left: 16px; font-size: 8px; }
+  .login-card h1 { font-size: 22px; }
+  .access-choice-button { min-height: 61px; padding-inline: 13px; }
+  .choice-icon { width: 39px; height: 39px; }
+  .login-footer { margin-top: 9px; }
+  .guest-mode-notice { margin: 10px 12px 0; align-items: flex-start; flex-direction: column; gap: 1px; }
+  .topbar { min-height: 78px; padding: 12px 14px; }
+  .topbar h2 { font-size: 18px; }
+  .topbar .topbar-location { max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 7px; }
+  .topbar .topbar-contact { max-width: 220px; font-size: 7px; }
+  .topbar .primary { font-size: 0; width: 42px; height: 42px; padding: 0; }
+  .topbar .primary::after { content: "+"; font: 25px/1 Arial; }
+  .page { padding: 15px 12px 28px; }
+  .hero-card { padding: 22px; align-items: flex-start; flex-direction: column; }
+  .hero-card p { font-size: 12px; }
+  .dashboard-control { margin-top: 14px; padding: 12px; align-items: stretch; flex-direction: column; gap: 9px; }
+  .period-tabs { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .period-tabs button { min-width: 0; padding-inline: 3px; font-size: 9px; }
+  .dashboard-search-card { margin-top: 11px; padding: 12px; gap: 9px; }
+  .dashboard-search-result { grid-template-columns: auto minmax(90px, 1fr) auto; }
+  .dashboard-search-result > b { display: none; }
+  .dashboard-search-result .status-badge { font-size: 8px; padding: 4px 6px; }
+  .chart-period-tabs { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .chart-summary { grid-template-columns: 1fr 1fr; }
+  .chart-summary strong { font-size: 12px; }
+  .business-chart { min-width: 560px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+  .status-summary { grid-template-columns: 1fr 1fr; }
+  .status-summary article { padding: 11px; }
+  .status-manager-banner { padding: 20px; align-items: flex-start; }
+  .status-manager-banner h3 { font-size: 20px; }
+  .status-choice-grid { grid-template-columns: 1fr 1fr; }
+  .stat-card { padding: 14px 12px; gap: 9px; }
+  .stat-icon { width: 39px; height: 39px; border-radius: 12px; font-size: 17px; }
+  .stat-card strong { font-size: 16px; }
+  .money-stat strong { font-size: 12px; }
+  .profit-note { margin-top: -5px; align-items: flex-start; }
+  .content-card { padding: 16px; }
+  .card-heading.wrap { align-items: flex-start; }
+  .form-banner { padding: 20px; flex-direction: column; align-items: flex-start; border-radius: 16px 16px 0 0; }
+  .measurement-form-logo { width: 62px; height: 62px; }
+  .measurement-form-heading { margin-left: 0; }
+  .form-card { padding: 19px 15px; }
+  .form-grid.four, .form-grid.three, .payment-fields { grid-template-columns: 1fr; }
+  .measurement-grid { grid-template-columns: repeat(2, 1fr); }
+  .tailor-slip-layout { gap: 12px; }
+  .measurement-ledger-grid { grid-template-columns: 1fr; }
+  .measure-row { grid-template-columns: 1fr 82px; }
+  .design-choice-grid, .design-choice-grid.four-choices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .design-choice-grid.two-choices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .design-text-fields { grid-template-columns: 1fr; }
+  .new-design-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .new-design-card { grid-template-rows: 125px auto auto; }
+  .new-design-card img { height: 125px; }
+  .money-private-banner { padding: 20px; align-items: flex-start; }
+  .money-private-banner h3 { font-size: 20px; }
+  .money-lock-symbol { width: 52px; height: 52px; font-size: 22px; }
+  .money-summary-grid { grid-template-columns: 1fr 1fr; }
+  .money-summary-grid article:last-child { grid-column: 1 / -1; }
+  .money-record-row { grid-template-columns: 1fr 1fr; }
+  .money-record-row .money-customer { grid-column: 1 / -1; }
+  .money-record-row > .profit, .money-record-row > .cost { display: none; }
+  .private-money-button { width: 100%; }
+  .filters { grid-template-columns: 1fr; }
+  .backup-grid { grid-template-columns: 1fr; }
+  .transfer-grid { grid-template-columns: 1fr; }
+  .folder-backup-card { padding: 20px; grid-template-columns: 1fr; }
+  .folder-backup-status, .folder-backup-actions, .folder-backup-note { grid-column: 1; }
+  .folder-backup-copy { align-items: flex-start; }
+  .folder-backup-actions button { flex: 1 1 140px; }
+  .danger-zone { align-items: stretch; flex-direction: column; }
+  .completed-banner { padding: 20px; align-items: flex-start; gap: 15px; }
+  .transfer-banner { padding: 20px; align-items: flex-start; }
+  .transfer-banner h3 { font-size: 20px; }
+  .form-actions { padding: 13px; }
+  .form-actions button { flex: 1; padding-inline: 8px; font-size: 12px; }
+  .saved-measurement-panel { align-items: stretch; flex-direction: column; }
+  .saved-measurement-panel .primary { width: 100%; }
+  .app-location-footer { margin: 2px 12px 17px; flex-wrap: wrap; font-size: 8px; }
+  .modal { padding: 10px; }
+  .modal-panel { padding: 23px 16px; }
+  .detail-grid { grid-template-columns: 1fr 1fr; }
+  .measurement-table { border-spacing: 4px; }
+  .measurement-table td { padding: 7px 3px; }
+  .toast { left: 12px; right: 12px; bottom: 12px; max-width: none; }
+}

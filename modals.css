@@ -1,0 +1,37 @@
+/* Bright Star Tailor - Modals
+   Shared modal shell used by detail/payment/money dialogs. */
+
+.modal { position: fixed; inset: 0; z-index: 80; display: none; place-items: center; padding: 20px; background: rgba(12, 28, 46, .55); backdrop-filter: blur(4px); }
+.modal.open { display: grid; }
+.modal-panel { position: relative; width: min(100%, 650px); max-height: 90vh; overflow: auto; background: #fff; border-radius: 19px; padding: 28px; box-shadow: 0 25px 70px rgba(7,22,39,.3); }
+.modal-panel.large { width: min(100%, 900px); }
+.modal-panel.small { width: min(100%, 470px); }
+.modal-close { position: absolute; left: 17px; top: 14px; border: 0; background: #eef2f6; color: #526171; width: 34px; height: 34px; border-radius: 50%; font: 25px/1 Arial; }
+.modal-panel h3 { margin: 0; }
+.modal-subtitle { margin: 2px 0 17px; color: var(--muted); font-size: 12px; }
+.modal-panel form { display: grid; gap: 14px; }
+.due-chip { padding: 10px 13px; color: var(--red); background: var(--red-soft); border-radius: 10px; }
+.full-button { width: 100%; }
+
+.detail-header { padding: 8px 0 18px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; }
+.detail-header h2 { margin: 0; font-size: 22px; }
+.detail-header p { margin: 0; color: var(--muted); font-size: 12px; }
+.detail-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 11px; margin-top: 18px; }
+.detail-item { padding: 11px; background: #f6f8fa; border-radius: 10px; }
+.detail-item span { display: block; color: var(--muted); font-size: 10px; }
+.detail-item strong { display: block; margin-top: 2px; word-break: break-word; }
+.detail-section { margin-top: 21px; }
+.detail-section h4 { margin: 0 0 9px; color: var(--navy); }
+.measurement-table { width: 100%; border-collapse: separate; border-spacing: 7px; table-layout: fixed; }
+.measurement-table td { padding: 9px; text-align: center; background: var(--blue-soft); border-radius: 9px; }
+.measurement-table small { display: block; color: var(--muted); font-size: 10px; }
+.measurement-table strong { display: block; font-size: 16px; }
+.payment-history { display: grid; gap: 8px; }
+.payment-line { padding: 9px 12px; background: var(--green-soft); border-radius: 9px; display: flex; justify-content: space-between; gap: 10px; font-size: 12px; }
+.detail-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+
+.toast { position: fixed; left: 22px; bottom: 22px; z-index: 100; min-width: 250px; max-width: calc(100vw - 44px); padding: 12px 17px; color: #fff; background: #173d6b; border-radius: 11px; box-shadow: 0 13px 35px rgba(15,39,66,.24); opacity: 0; pointer-events: none; transform: translateY(12px); transition: .25s ease; }
+.toast.show { opacity: 1; transform: none; }
+.toast.error { background: var(--red); }
+.sidebar-overlay { display: none; }
+#printArea { display: none; }

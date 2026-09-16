@@ -1,0 +1,76 @@
+/* Bright Star Tailor - Transfer & Backup Cards
+   Offline record transfer banner/cards and backup grid. */
+
+.transfer-banner { padding: 27px 30px; margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #fff; border: 1px solid rgba(231,194,100,.18); border-radius: 21px; background: radial-gradient(circle at 12% 20%, rgba(232,188,76,.2), transparent 28%), linear-gradient(120deg, #06192d, #163f67); box-shadow: 0 15px 38px rgba(7,32,56,.17); }
+.transfer-banner h3 { margin: 4px 0; font-size: 24px; }
+.transfer-banner p { margin: 0; color: rgba(255,255,255,.74); font-size: 12px; }
+.transfer-symbol { width: 65px; height: 65px; display: grid; place-items: center; flex: 0 0 auto; color: #13344e; border-radius: 20px; background: linear-gradient(145deg, #f4d278, #c8952c); font: 800 31px/1 Arial; }
+.transfer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.transfer-card { padding: 23px; border: 1px solid var(--line); border-radius: 19px; background: rgba(255,255,255,.94); box-shadow: 0 12px 34px rgba(24,45,69,.055); }
+.transfer-card-heading { margin-bottom: 17px; display: flex; align-items: center; gap: 11px; }
+.transfer-card-heading > span { width: 38px; height: 38px; display: grid; place-items: center; flex: 0 0 auto; color: var(--blue); border-radius: 12px; background: var(--blue-soft); font-weight: 800; }
+.transfer-card-heading h3 { margin: 0; font-size: 17px; }
+.transfer-card-heading p { margin: 1px 0 0; color: var(--muted); font-size: 10px; }
+.transfer-card > .field { margin-bottom: 13px; }
+.transfer-record-picker { margin: 0 0 14px; padding: 12px; border: 1px solid #dbe2e8; border-radius: 13px; background: #f8fafc; }
+.transfer-picker-heading { margin-bottom: 9px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.transfer-picker-heading strong { color: var(--ink); font-size: 12px; }
+.transfer-picker-heading span { padding: 4px 8px; color: var(--blue); border-radius: 20px; background: var(--blue-soft); font-size: 9px; font-weight: 800; }
+.transfer-picker-search { margin-bottom: 9px; background: #fff; }
+.transfer-select-all { margin-bottom: 8px; padding: 8px 10px; display: flex; align-items: center; gap: 8px; color: #29445f; border: 1px solid #cbdceb; border-radius: 10px; background: #edf5fc; font-size: 10px; font-weight: 800; }
+.transfer-select-all b { padding: 2px 7px; color: #fff; border-radius: 12px; background: var(--blue); font: 900 9px/1.4 Arial, sans-serif; letter-spacing: .5px; }
+.transfer-select-all input, .transfer-record-option input { width: 18px; height: 18px; flex: 0 0 auto; accent-color: var(--blue); }
+.transfer-record-list { max-height: 255px; display: grid; gap: 7px; overflow: auto; overscroll-behavior: contain; }
+.transfer-record-option { padding: 9px 10px; display: flex; align-items: center; gap: 9px; border: 1px solid #e0e6ec; border-radius: 10px; background: #fff; cursor: pointer; }
+.transfer-record-option:has(input:checked) { border-color: #9fc3e1; background: #f0f7fd; box-shadow: 0 0 0 2px rgba(35,105,163,.06); }
+.transfer-record-copy { min-width: 0; flex: 1; }
+.transfer-record-copy strong, .transfer-record-copy small { display: block; }
+.transfer-record-copy strong { overflow: hidden; color: var(--ink); font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.transfer-record-copy small { margin-top: 2px; color: var(--muted); font-size: 8px; }
+.transfer-record-option b { color: var(--green); font-size: 8px; white-space: nowrap; }
+.transfer-picker-empty { padding: 18px 10px; color: var(--muted); text-align: center; font-size: 10px; }
+.transfer-options { margin-bottom: 15px; align-items: end; }
+.check-field { min-height: 61px; padding: 10px 12px; display: flex; align-items: center; gap: 9px; color: #536272; border: 1px solid #dbe2e8; border-radius: 10px; background: #fbfcfd; font-size: 10px; font-weight: 700; }
+.check-field input { width: 18px; height: 18px; accent-color: var(--blue); }
+.transfer-actions { display: flex; flex-wrap: wrap; gap: 9px; }
+.worker-access-card { margin: 15px 0; padding: 12px 14px; display: flex; align-items: center; gap: 10px; color: #667483; border: 1px solid #dfe5eb; border-radius: 12px; background: #f7f9fb; }
+.worker-access-card > span { width: 10px; height: 10px; flex: 0 0 auto; border-radius: 50%; background: #aab6c2; box-shadow: 0 0 0 4px #e8edf2; }
+.worker-access-card.active { color: #155a42; border-color: #bfe2d4; background: #eaf8f2; }
+.worker-access-card.active > span { background: #27a878; box-shadow: 0 0 0 4px #cdeee2; }
+.worker-access-card strong, .worker-access-card small { display: block; }
+.worker-access-card small { margin-top: 2px; font-size: 10px; }
+.transfer-output { display: none; margin-top: 18px; padding: 22px; border: 1px solid #e4d4a3; border-radius: 18px; background: linear-gradient(145deg, #fffef9, #fff7dc); }
+.transfer-output.visible { display: grid; gap: 12px; }
+.transfer-output h3 { margin: 0; }
+.transfer-output p { margin: 2px 0 0; color: var(--muted); font-size: 11px; }
+.transfer-output textarea { width: 100%; padding: 12px; direction: ltr; color: #273849; border: 1px solid #ddcfaa; border-radius: 10px; background: #fff; font: 10px/1.5 monospace; resize: vertical; }
+body.worker-session .record-row .amount-due, body.worker-session .record-row .amount-paid { display: none; }
+body.worker-session .icon-button.delete, body.worker-session [data-action="edit"], body.worker-session [data-action="payment"] { display: none !important; }
+.dues-banner span { display: block; color: #ffe0df; font-size: 12px; }
+.dues-banner strong { display: block; font-size: 28px; }
+.dues-symbol { font: 44px/1 Arial; opacity: .25; }
+.due-search { max-width: 480px; margin-bottom: 10px; }
+
+.backup-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.folder-backup-card { margin-bottom: 20px; padding: 25px 28px; display: grid; grid-template-columns: minmax(260px, 1fr) auto; align-items: center; gap: 17px 24px; color: #fff; border: 1px solid rgba(231,194,100,.18); border-radius: 21px; background: radial-gradient(circle at 8% 15%, rgba(229,184,72,.2), transparent 27%), linear-gradient(120deg, #061a2f, #164b75); box-shadow: 0 16px 38px rgba(8,34,58,.17); }
+.folder-backup-copy { display: flex; align-items: center; gap: 16px; }
+.folder-backup-copy h3 { margin: 3px 0; font-size: 20px; }
+.folder-backup-copy p { margin: 0; max-width: 610px; color: rgba(255,255,255,.72); font-size: 11px; }
+.folder-backup-status { padding: 10px 13px; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.14); border-radius: 11px; background: rgba(255,255,255,.08); font-size: 11px; }
+.folder-backup-status span { width: 9px; height: 9px; flex: 0 0 auto; border-radius: 50%; background: #e8b94f; box-shadow: 0 0 0 4px rgba(232,185,79,.13); }
+.folder-backup-status span.connected { background: #5be0a8; box-shadow: 0 0 0 4px rgba(91,224,168,.13); }
+.folder-backup-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 9px; }
+.folder-backup-card .secondary { color: #eaf3fb; border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.1); }
+.folder-backup-note { grid-column: 1 / -1; color: rgba(255,255,255,.58); }
+.backup-card { padding: 31px; text-align: center; background: #fff; border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); }
+.backup-card h3 { margin: 13px 0 4px; }
+.backup-card p { margin: 0 auto 20px; max-width: 390px; color: var(--muted); font-size: 13px; }
+.backup-icon { width: 62px; height: 62px; border-radius: 19px; display: grid; place-items: center; margin: auto; font: 700 28px/1 Arial; }
+.backup-icon.blue { color: var(--blue); background: var(--blue-soft); }
+.backup-icon.green { color: var(--green); background: var(--green-soft); }
+.backup-icon.gold { color: #684500; background: linear-gradient(145deg, #f4d278, #c8952c); }
+.file-button { display: inline-block; cursor: pointer; }
+.file-button input { display: none; }
+.danger-zone { margin-top: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px; border-color: #f1cdd1; }
+.danger-zone h3 { margin: 0; color: var(--red); }
+.danger-zone p { margin: 0; color: var(--muted); font-size: 12px; }

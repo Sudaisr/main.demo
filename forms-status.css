@@ -1,0 +1,118 @@
+/* Bright Star Tailor - Status Badges & Shared Form Fields
+   Status badge/action colours, form grid, record list rows. */
+
+.status-badge { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; border-radius: 999px; padding: 5px 10px; font-size: 11px; font-weight: 700; }
+.status-badge.pending { color: var(--amber); background: var(--amber-soft); }
+.status-badge.ready { color: var(--green); background: var(--green-soft); }
+.status-badge.packed { color: #7149a7; background: #f0e9fb; }
+.status-badge.delivered { color: var(--blue); background: var(--blue-soft); }
+.row-actions { display: flex; gap: 6px; justify-content: flex-end; }
+.status-action-button { min-height: 35px; padding: 6px 11px; border: 0; border-radius: 9px; white-space: nowrap; font: 700 10px/1.4 "Nafees Web Naskh", Tahoma, sans-serif; }
+.status-action-button.ready-action { color: #0c724c; background: var(--green-soft); box-shadow: inset 0 0 0 1px rgba(32,161,111,.14); }
+.status-action-button.packed-action { color: #684094; background: #f0e9fb; box-shadow: inset 0 0 0 1px rgba(104,64,148,.14); }
+.status-action-button.delivered-action { color: #fff; background: linear-gradient(135deg, #173d6b, #2f6ea8); box-shadow: 0 5px 14px rgba(23,61,107,.18); }
+.icon-button { width: 35px; height: 35px; border: 0; border-radius: 9px; background: #f1f5f9; color: var(--navy); display: grid; place-items: center; }
+.icon-button:hover { background: var(--blue-soft); }
+.icon-button.delete { color: var(--red); }
+
+.form-banner { padding: 27px 30px; color: #fff; border-radius: 22px 22px 0 0; background: radial-gradient(circle at 10% 10%, rgba(224,181,75,.18), transparent 25%), linear-gradient(115deg, #04182c, #1b5b91); display: flex; align-items: center; justify-content: space-between; gap: 18px; border: 1px solid rgba(220,184,96,.15); }
+.form-banner h3 { margin: 2px 0 0; font-size: 22px; }
+.measurement-form-logo { width: 74px; height: 74px; flex: 0 0 auto; object-fit: cover; border: 2px solid #e6bd58; border-radius: 50%; box-shadow: 0 10px 24px rgba(0,0,0,.22); }
+.measurement-form-heading { margin-left: auto; }
+.measurement-form-heading small { display: block; margin-top: 5px; color: rgba(255,255,255,.75); direction: ltr; font-size: 9px; }
+.receipt-badge { background: rgba(255,255,255,.13); padding: 9px 14px; border: 1px solid rgba(255,255,255,.18); border-radius: 10px; font-size: 12px; }
+.form-card { padding: 24px; border-radius: 0; border-top: 0; box-shadow: none; }
+.form-card:last-of-type { border-radius: 0 0 18px 18px; }
+.section-title { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.section-title > span { width: 35px; height: 35px; display: grid; place-items: center; border-radius: 11px; color: var(--blue); background: var(--blue-soft); font-weight: 800; }
+.section-title h3 { margin: 0; font-size: 17px; }
+.section-title p { margin: 0; color: var(--muted); font-size: 11px; }
+
+.form-grid { display: grid; gap: 16px; }
+.form-grid.four { grid-template-columns: repeat(4, 1fr); }
+.form-grid.three { grid-template-columns: repeat(3, 1fr); }
+.measurement-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 13px; }
+.field { display: grid; gap: 5px; color: #44505e; font-size: 12px; font-weight: 700; }
+.field input, .field select, .field textarea, .search-box input, .filters select { min-width: 0; width: 100%; color: var(--ink); background: #fbfcfd; border: 1px solid #d9e0e8; border-radius: 10px; padding: 10px 12px; outline: none; transition: .18s ease; }
+.field input:focus, .field select:focus, .field textarea:focus, .search-box input:focus, .filters select:focus { border-color: #73a6d7; box-shadow: 0 0 0 3px rgba(66,125,182,.1); background: #fff; }
+.field input[readonly] { color: var(--muted); background: #f1f4f7; }
+.field textarea { resize: vertical; }
+.field.full { margin-top: 16px; }
+.measure { text-align: center; }
+.measure input { text-align: center; font-size: 17px; font-weight: 800; border-style: dashed; }
+.payment-fields { grid-template-columns: repeat(5, 1fr); }
+.cost-field input { border-color: #e8d9ac; background: #fffaf0; }
+.balance-field output { display: block; color: var(--red); background: var(--red-soft); border-radius: 10px; padding: 9px 12px; font-size: 16px; }
+.profit-field output { display: block; color: #72500a; background: var(--gold-soft); border: 1px solid #eedca7; border-radius: 10px; padding: 8px 12px; font-size: 16px; }
+.form-actions { padding: 22px 25px; display: flex; justify-content: flex-end; gap: 10px; background: #fff; border: 1px solid var(--line); border-top: 0; border-radius: 0 0 18px 18px; position: sticky; bottom: 0; z-index: 5; box-shadow: 0 -10px 30px rgba(28,48,72,.06); }
+.saved-measurement-panel { margin-top: 13px; padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; gap: 15px; color: #124d39; border: 1px solid #b9dfd0; border-radius: 15px; background: linear-gradient(145deg, #effbf6, #e2f6ee); box-shadow: 0 11px 28px rgba(20,120,90,.09); }
+.saved-measurement-panel[hidden] { display: none; }
+.saved-measurement-panel > div { display: flex; align-items: center; gap: 10px; }
+.saved-measurement-panel > div > span { width: 38px; height: 38px; display: grid; place-items: center; flex: 0 0 auto; color: #fff; border-radius: 12px; background: var(--green); font-weight: 800; }
+.saved-measurement-panel p { margin: 0; }
+.saved-measurement-panel strong, .saved-measurement-panel small { display: block; }
+.saved-measurement-panel small { color: #4f7467; font-size: 10px; }
+
+.tailor-slip-card { background: linear-gradient(180deg, #fff, #fbfcfe); }
+.tailor-slip-layout { display: grid; grid-template-columns: minmax(280px, .72fr) minmax(520px, 1.28fr); gap: 18px; align-items: start; }
+.measurement-ledger, .visual-design-board { overflow: hidden; border: 1px solid #cad5df; border-radius: 17px; background: #fff; box-shadow: 0 10px 30px rgba(25,55,86,.06); }
+.measurement-ledger-title, .visual-board-title { padding: 11px 14px; color: #fff; background: linear-gradient(120deg, #0b2a48, #1f6094); font-weight: 800; }
+.measurement-ledger-title { display: flex; align-items: center; justify-content: space-between; }
+.measurement-ledger-title small, .visual-board-title small { color: rgba(255,255,255,.72); font-size: 9px; font-weight: 500; }
+.measurement-ledger-title.trouser-title { border-top: 4px solid #e6bd58; }
+.measurement-ledger-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.measure-row { min-height: 58px; display: grid; grid-template-columns: minmax(75px, 1fr) 76px; align-items: center; border-bottom: 1px solid #dfe5eb; border-left: 1px solid #dfe5eb; color: #314355; background: #fff; font-size: 11px; font-weight: 800; }
+.measure-row span { padding: 8px 10px; }
+.measure-row input { width: 100%; height: 100%; min-height: 57px; box-sizing: border-box; border: 0; border-right: 1px dashed #b9c5d0; outline: none; color: #0d416d; background: #f7fafe; text-align: center; font-size: 19px; font-weight: 900; }
+.measure-row input:focus { background: #fff8df; box-shadow: inset 0 0 0 2px #e6bd58; }
+.visual-board-title { display: grid; gap: 2px; }
+.design-visual-group { min-width: 0; margin: 0; padding: 11px 12px 13px; border: 0; border-bottom: 1px solid #e1e7ed; }
+.design-visual-group legend { padding: 0 3px; color: #173d6b; font-size: 12px; font-weight: 900; }
+.design-choice-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.design-choice-grid.four-choices { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.design-choice-grid.two-choices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.design-choice { position: relative; min-height: 91px; box-sizing: border-box; padding: 8px 5px 7px; display: grid; place-items: center; gap: 5px; overflow: hidden; cursor: pointer; border: 1px solid #dbe3ea; border-radius: 13px; color: #4a5968; background: #fbfcfd; text-align: center; transition: .18s ease; }
+.design-choice:hover { border-color: #8eb2d1; background: #f2f8fd; transform: translateY(-1px); }
+.design-choice:has(input:checked) { color: #0c3d68; border-color: #d1a438; background: linear-gradient(145deg, #fffdf6, #eaf4fd); box-shadow: inset 0 0 0 2px rgba(225,181,69,.18), 0 7px 17px rgba(31,83,127,.1); }
+.design-choice input { position: absolute; opacity: 0; pointer-events: none; }
+.design-choice b { font-size: 9px; line-height: 1.35; }
+.design-sketch { position: relative; width: 58px; height: 43px; display: block; color: #63788b; border-radius: 9px; background: #fff; box-shadow: inset 0 0 0 1px #e0e6eb; }
+.design-choice input:checked + .design-sketch { color: #124f80; background: #fff9e8; box-shadow: inset 0 0 0 1px #e0bc5f; }
+.design-sketch::before, .design-sketch::after, .design-sketch i { position: absolute; box-sizing: border-box; display: block; content: ""; }
+.neck-band::before { top: 9px; left: 17px; width: 24px; height: 18px; border: 3px solid currentColor; border-top: 0; border-radius: 0 0 12px 12px; }
+.neck-band::after { top: 5px; left: 14px; width: 30px; height: 8px; border: 2px solid currentColor; border-radius: 4px; }
+.neck-collar::before { top: 6px; left: 8px; width: 21px; height: 22px; border: 3px solid currentColor; transform: skewY(-20deg); }
+.neck-collar::after { top: 6px; right: 8px; width: 21px; height: 22px; border: 3px solid currentColor; transform: skewY(20deg); }
+.neck-ban::before { top: 8px; left: 14px; width: 30px; height: 25px; border: 3px solid currentColor; border-top-width: 7px; border-radius: 10px 10px 14px 14px; }
+.neck-round::before { top: 6px; left: 14px; width: 30px; height: 28px; border: 3px solid currentColor; border-top: 0; border-radius: 0 0 18px 18px; }
+.placket-simple::before, .placket-hidden::before, .placket-double::before { top: 4px; left: 24px; width: 10px; height: 35px; border: 2px solid currentColor; }
+.placket-simple::after { top: 10px; left: 27px; width: 4px; height: 4px; border-radius: 50%; background: currentColor; box-shadow: 0 9px currentColor, 0 18px currentColor; }
+.placket-hidden::after { top: 8px; left: 29px; width: 2px; height: 27px; background: currentColor; }
+.placket-double::after { top: 5px; left: 20px; width: 18px; height: 34px; border-right: 2px solid currentColor; border-left: 2px solid currentColor; }
+.cuff-simple::before, .cuff-round::before, .cuff-square::before, .cuff-double::before { top: 11px; left: 8px; width: 42px; height: 22px; border: 3px solid currentColor; }
+.cuff-round::before { border-radius: 5px 5px 13px 13px; }
+.cuff-square::before { border-radius: 0; }
+.cuff-double::before { box-shadow: inset 0 -6px #fff, inset 0 -8px currentColor; }
+.cuff-simple::after, .cuff-round::after, .cuff-square::after, .cuff-double::after { top: 19px; right: 13px; width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
+.pocket-one::before, .pocket-two::before, .pocket-side::before { top: 8px; left: 15px; width: 28px; height: 28px; border: 3px solid currentColor; border-top-width: 5px; border-radius: 2px 2px 8px 8px; }
+.pocket-two::before { left: 5px; width: 21px; }
+.pocket-two::after { top: 8px; right: 5px; width: 21px; height: 28px; border: 3px solid currentColor; border-top-width: 5px; border-radius: 2px 2px 8px 8px; }
+.pocket-side::before { width: 30px; height: 24px; border-width: 0 0 3px 3px; border-radius: 0 0 0 12px; transform: skewX(-15deg); }
+.pocket-none::before { top: 8px; left: 27px; width: 3px; height: 28px; background: currentColor; transform: rotate(45deg); box-shadow: 0 0 0 1px #fff; }
+.pocket-none::after { top: 8px; right: 27px; width: 3px; height: 28px; background: currentColor; transform: rotate(-45deg); }
+.hem-round::before, .hem-square::before { top: 5px; left: 12px; width: 34px; height: 32px; border: 3px solid currentColor; border-top: 0; }
+.hem-round::before { border-radius: 0 0 18px 18px; }
+.trouser-pocket-straight::before, .trouser-pocket-slant::before, .trouser-pocket-zip::before { top: 5px; left: 18px; width: 23px; height: 34px; border-right: 3px solid currentColor; border-left: 3px solid currentColor; }
+.trouser-pocket-straight::after { top: 9px; left: 23px; width: 13px; height: 3px; background: currentColor; }
+.trouser-pocket-slant::after { top: 11px; left: 21px; width: 18px; height: 3px; background: currentColor; transform: rotate(-35deg); }
+.trouser-pocket-zip::after { top: 10px; left: 21px; width: 17px; height: 4px; border-top: 2px dashed currentColor; border-bottom: 1px solid currentColor; }
+.design-text-fields { padding: 13px; display: grid; grid-template-columns: 1fr 1fr; gap: 11px; background: #f7f9fb; }
+.new-design-grid { padding: 12px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.new-design-card { min-width: 0; padding: 9px; display: grid; grid-template-rows: 130px auto auto; gap: 6px; border: 1px solid #d4dfe8; border-radius: 13px; background: #f9fbfd; text-align: center; }
+.new-design-card img { width: 100%; height: 130px; display: block; object-fit: contain; border-radius: 8px; background: #fff; }
+.design-field-row { display: flex; align-items: center; gap: 5px; }
+.design-field-tag { flex: 0 0 auto; font-size: 10px; font-weight: 800; color: #4a5c70; background: #e9f2fb; border-radius: 6px; padding: 4px 6px; white-space: nowrap; }
+.new-design-card input { width: 100%; box-sizing: border-box; padding: 8px 4px; border: 2px solid #9cb3c7; border-radius: 8px; background: #fff; text-align: center; font-size: 12px; font-weight: 900; }
+.new-design-card input:focus { outline: none; border-color: #d1a438; box-shadow: 0 0 0 3px rgba(209,164,56,.18); }
+.instruction-field { padding-top: 15px; }
+.instruction-field textarea { min-height: 80px; background: repeating-linear-gradient(#fff, #fff 29px, #dfe6ec 30px); line-height: 30px; }

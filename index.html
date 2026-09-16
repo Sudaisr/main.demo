@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173d6b">
+  <title>برائٹ سٹار ٹیلرز — انتظامی نظام</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <link rel="stylesheet" href="css/base.css?v=2.3.15">
+  <link rel="stylesheet" href="css/login.css?v=2.3.15">
+  <link rel="stylesheet" href="css/sidebar-nav.css?v=2.3.15">
+  <link rel="stylesheet" href="css/topbar-dashboard.css?v=2.3.15">
+  <link rel="stylesheet" href="css/forms-status.css?v=2.3.15">
+  <link rel="stylesheet" href="css/money.css?v=2.3.15">
+  <link rel="stylesheet" href="css/status-manager.css?v=2.3.15">
+  <link rel="stylesheet" href="css/transfer-backup.css?v=2.3.15">
+  <link rel="stylesheet" href="css/modals.css?v=2.3.15">
+  <link rel="stylesheet" href="css/responsive.css?v=2.3.15">
+  <link rel="stylesheet" href="css/print.css?v=2.3.15">
+</head>
+<body class="locked">
+  <section class="login-screen" id="loginScreen" aria-label="مالک لاگ اِن">
+    <div class="login-aurora aurora-one" aria-hidden="true"></div>
+    <div class="login-aurora aurora-two" aria-hidden="true"></div>
+    <div class="login-stage">
+      <div class="login-showcase">
+        <span class="showcase-badge">PREMIUM TAILOR MANAGEMENT</span>
+        <div class="showcase-star" aria-hidden="true">★</div>
+        <h2>نفیس سلائی،<br><em>بہترین انتظام</em></h2>
+        <p>آرڈرز، پیمائش، حساب اور منافع—آپ کے کاروبار کا مکمل اور محفوظ نظام۔</p>
+        <div class="showcase-features">
+          <span><b>✓</b> MySQL Database</span>
+          <span><b>✓</b> نجی اور محفوظ</span>
+          <span><b>✓</b> اردو میں آسان</span>
+        </div>
+        <div class="tailor-line" aria-hidden="true"><i></i><span>✂</span><i></i></div>
+      </div>
+      <div class="login-card">
+        <div class="logo-orbit">
+          <span class="orbit-dot"></span>
+          <div class="login-logo text-logo" aria-label="Bright Star Tailors">BST</div>
+        </div>
+        <div class="security-chip"><span></span> محفوظ ذاتی رسائی</div>
+        <p class="login-kicker">WELCOME TO</p>
+        <h1>برائٹ سٹار ٹیلرز</h1>
+        <p class="login-brand-en">BRIGHT STAR TAILOR</p>
+        <p class="login-subtitle">محفوظ مالک رسائی</p>
+      <form id="loginForm" class="login-form owner-only-login" autocomplete="off">
+        <button type="submit" class="login-button owner-direct-button" id="loginButton">
+          <span class="choice-icon">➜</span>
+          <span><strong>داخل ہوں</strong><small>OWNER ACCESS</small></span>
+        </button>
+        <p class="login-error" id="loginError" role="alert" aria-live="polite"></p>
+      </form>
+        <div class="login-trust-row"><span>✓ محفوظ</span><span>✓ تیز رفتار</span><span>✓ آسان</span></div>
+        <div class="login-footer"><span>✦</span> معیار • اعتماد • نفاست <span>✦</span><small>⌖ Zab City, Near Tablighi Markaz, 2nd Door, Opposite Qazi Taraf</small></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="app-shell" id="appShell" aria-hidden="true">
+    <aside class="sidebar" aria-label="مرکزی فہرست">
+      <div class="brand">
+        <div class="brand-mark text-brand-mark" aria-hidden="true">BST</div>
+        <div>
+          <h1>برائٹ سٹار ٹیلرز</h1>
+          <p>PREMIUM TAILOR SUITE</p>
+        </div>
+      </div>
+
+      <nav class="nav-list">
+        <button class="nav-item active" data-page="dashboard"><span>⌂</span> مرکزی صفحہ</button>
+        <button class="nav-item" data-page="new-order"><span>＋</span> نیا آرڈر</button>
+        <button class="nav-item" data-page="status"><span>↻</span> سوٹ کی حالت اپڈیٹ</button>
+        <button class="nav-item" data-page="orders"><span>▤</span> تمام آرڈرز</button>
+        <button class="nav-item" data-page="completed"><span>✓</span> مکمل شدہ آرڈرز</button>
+        <button class="nav-item owner-private-nav" data-page="money"><span>🔒</span> نجی حساب</button>
+        <button class="nav-item" data-page="transfer"><span>⇄</span> ریکارڈ شیئر / وصول</button>
+        <button class="nav-item" data-page="backup"><span>⇩</span> بیک اَپ</button>
+      </nav>
+
+      <div class="sidebar-location"><span>⌖</span><div><small>دکان کا پتہ</small><strong>Zab City</strong><small>Near Tablighi Markaz, 2nd Door, Opposite Qazi Taraf</small></div></div>
+      
+
+      <div class="sidebar-note">
+        <span class="status-dot"></span>
+        <span id="sessionModeLabel">مالک موڈ — ڈیٹا محفوظ ہے</span>
+      </div>
+      <div class="database-sync-note">
+        <span id="databaseSyncDot"></span>
+        <div><strong id="databaseSyncTitle">MySQL انتظار میں</strong><small id="databaseSyncDetail">Owner Login کے بعد status دکھے گا</small></div>
+      </div>
+      <button type="button" class="session-exit-button" id="exitSessionButton">⇥ سیشن ختم کریں</button>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" aria-label="فہرست کھولیں">☰</button>
+        <div>
+          <h2 id="pageTitle">مرکزی صفحہ</h2>
+          <p id="todayDate"></p>
+          <p class="topbar-location">⌖ Zab City, Near Tablighi Markaz, 2nd Door, Opposite Qazi Taraf</p>
+          
+        </div>
+        <button class="primary compact" id="quickOrderButton">＋ نیا آرڈر</button>
+      </header>
+
+      <div class="guest-mode-notice" id="guestModeNotice">
+        <strong>مہمان موڈ</strong>
+        <span>یہ عارضی ریکارڈ ہیں؛ سیشن ختم ہونے پر تمام مہمان ڈیٹا خودکار طور پر حذف ہوجائے گا۔</span>
+      </div>
+
+      <section class="page active" id="dashboardPage">
+        <div class="hero-card">
+          <div>
+            <span class="eyebrow">BRIGHT BUSINESS CONTROL</span>
+            <h3>کاروبار کی مکمل تصویر، ایک نظر میں</h3>
+            <p>آرڈرز، آمدنی، لاگت اور منافع کا درست حساب ہمیشہ آپ کے ساتھ۔</p>
+          </div>
+          <button class="light-button" data-go="new-order">نیا آرڈر درج کریں</button>
+        </div>
+
+        <div class="dashboard-search-card">
+          <div class="dashboard-search-copy"><span>⌕</span><div><strong>گاہک فوراً تلاش کریں</strong><small>نام، موبائل نمبر یا رسید / سلپ نمبر لکھیں</small></div></div>
+          <label class="search-box dashboard-search"><span>⌕</span><input id="dashboardSearch" placeholder="مثلاً احمد یا سلپ نمبر 12" autocomplete="off"></label>
+          <div id="dashboardSearchResults" class="dashboard-search-results"></div>
+        </div>
+
+        <div class="dashboard-control">
+          <div>
+            <span class="dashboard-control-kicker">کارکردگی کا خلاصہ</span>
+            <h3 id="periodTitle">تمام مدت</h3>
+          </div>
+          <div class="period-tabs" id="dashboardPeriodTabs" role="group" aria-label="مدت منتخب کریں">
+            <button type="button" data-period="week">ہفتہ وار</button>
+            <button type="button" data-period="month">ماہانہ</button>
+            <button type="button" data-period="year">سالانہ</button>
+            <button type="button" class="active" data-period="all">مکمل</button>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card blue featured-stat">
+            <div class="stat-icon">◎</div>
+            <div><p>کل آرڈرز</p><strong id="totalOrders">۰</strong></div>
+          </article>
+          <article class="stat-card violet">
+            <div class="stat-icon">♜</div>
+            <div><p>کل سوٹ / جوڑے</p><strong id="totalSuits">۰</strong></div>
+          </article>
+          <article class="stat-card green money-stat">
+            <div class="stat-icon">₨</div>
+            <div><p>کل آمدنی</p><strong id="totalEarnings">۰ روپے</strong></div>
+          </article>
+          <article class="stat-card gold money-stat profit-card">
+            <div class="stat-icon">↗</div>
+            <div><p>خالص منافع</p><strong id="totalProfit">۰ روپے</strong></div>
+          </article>
+          <article class="stat-card emerald">
+            <div class="stat-icon">✓</div>
+            <div><p>تیار آرڈرز</p><strong id="readyOrders">۰</strong></div>
+          </article>
+          <article class="stat-card amber">
+            <div class="stat-icon">◷</div>
+            <div><p>زیرِ سلائی</p><strong id="pendingOrders">۰</strong></div>
+          </article>
+          <article class="stat-card red money-stat">
+            <div class="stat-icon">₨</div>
+            <div><p>کل بقایا</p><strong id="totalDues">۰ روپے</strong></div>
+          </article>
+          <article class="stat-card slate money-stat">
+            <div class="stat-icon">−</div>
+            <div><p>کل لاگت</p><strong id="totalCost">۰ روپے</strong></div>
+          </article>
+        </div>
+
+        <div class="profit-note"><span>i</span><p><strong>منافع کا حساب:</strong> کل آمدنی میں سے درج کی گئی لاگت منہا کی جاتی ہے۔ پرانے آرڈرز کی درست رپورٹ کے لیے ان میں لاگت شامل کریں۔</p></div>
+
+        <div class="content-card progress-card">
+          <div class="card-heading progress-heading">
+            <div><span class="dashboard-control-kicker">LIVE BUSINESS GRAPH</span><h3>کاروباری ترقی اور بقایا جات</h3><p id="progressRangeLabel">گزشتہ ۷ دن کی اصل کارکردگی</p></div>
+            <div class="period-tabs chart-period-tabs" id="chartPeriodTabs" role="group" aria-label="گراف کی مدت منتخب کریں">
+              <button type="button" class="active" data-chart-period="day">روزانہ</button>
+              <button type="button" data-chart-period="week">ہفتہ وار</button>
+              <button type="button" data-chart-period="month">ماہانہ</button>
+              <button type="button" data-chart-period="year">سالانہ</button>
+            </div>
+          </div>
+          <div class="chart-summary">
+            <div><small>آرڈرز</small><strong id="chartOrdersTotal">۰</strong></div>
+            <div class="received"><small>وصولی</small><strong id="chartReceivedTotal">۰ روپے</strong></div>
+            <div class="profit"><small>منافع</small><strong id="chartProfitTotal">۰ روپے</strong></div>
+            <div class="due"><small>بقایا جات</small><strong id="chartDuesTotal">۰ روپے</strong></div>
+          </div>
+          <div class="chart-legend"><span class="received">وصولی</span><span class="profit">منافع</span><span class="due">بقایا</span></div>
+          <div class="business-chart-scroll"><div id="progressChart" class="business-chart" aria-label="کاروباری ترقی کا گراف"></div></div>
+        </div>
+
+        <div class="content-card">
+          <div class="card-heading">
+            <div><h3>حالیہ آرڈرز</h3><p>تازہ محفوظ کیے گئے ریکارڈ</p></div>
+            <button class="text-button" data-go="orders">سب دیکھیں ←</button>
+          </div>
+          <div id="recentOrders" class="records-list"></div>
+        </div>
+      </section>
+
+      <section class="page" id="newOrderPage">
+        <form id="orderForm" autocomplete="off">
+          <input type="hidden" id="editingId">
+          <div class="form-banner">
+            <div class="measurement-form-logo text-logo">BST</div>
+            <div class="measurement-form-heading">
+              <span class="eyebrow">TIMERGERA — تیمرگرہ</span>
+              <h3 id="formTitle">نیا آرڈر درج کریں</h3>
+              <small>Zab City, Near Tablighi Markaz, 2nd Door, Opposite Qazi Taraf</small>
+            </div>
+            <div class="receipt-badge">رسید نمبر: <strong id="receiptPreview"></strong></div>
+          </div>
+
+          <div class="form-card">
+            <div class="section-title"><span>۱</span><div><h3>گاہک کی معلومات</h3><p>بنیادی رابطہ اور آرڈر کی تاریخ</p></div></div>
+            <div class="form-grid four">
+              <label class="field"><span>رسید نمبر</span><input id="receiptNo" required readonly></label>
+              <label class="field"><span>گاہک کا نام *</span><input id="customerName" required placeholder="پورا نام لکھیں"></label>
+              <label class="field"><span>موبائل نمبر</span><input id="phone" inputmode="tel" placeholder="03xx xxxxxxx"></label>
+              <label class="field"><span>پتہ</span><input id="address" placeholder="علاقہ یا مکمل پتہ"></label>
+              <label class="field"><span>آرڈر کی تاریخ *</span><input type="date" id="orderDate" required></label>
+              <label class="field"><span>تاریخ واپسی *</span><input type="date" id="deliveryDate" required></label>
+              <label class="field"><span>آرڈر کی حالت</span>
+                <select id="status">
+                  <option value="pending">زیرِ سلائی</option>
+                  <option value="ready">تیار ہے</option>
+                  <option value="packed">پیک شدہ</option>
+                  <option value="delivered">ڈیلیور شدہ / مکمل</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-card tailor-slip-card">
+            <div class="section-title"><span>۲</span><div><h3>مکمل پیمائش اور ڈیزائن</h3><p>سائز درج کریں اور نیچے تصاویر میں سے ڈیزائن منتخب کریں — سب ایک ہی صفحے پر</p></div></div>
+            <div class="tailor-slip-layout">
+              <div class="measurement-ledger">
+                <div class="measurement-ledger-title">قمیض کی پیمائش <small>انچ میں</small></div>
+                <div class="measurement-ledger-grid">
+                  <label class="measure-row"><span>لمبائی</span><input id="shirtLength" inputmode="decimal" placeholder=""></label>
+                  <label class="measure-row"><span>تیرا</span><input id="shoulder" inputmode="decimal" placeholder=""></label>
+                  <label class="measure-row"><span>بازو</span><input id="sleeve" inputmode="decimal" placeholder=""></label>
+                  <label class="measure-row"><span>کالر</span><input id="neck" inputmode="decimal" placeholder=""></label>
+                  <label class="measure-row"><span>چھاتی</span><input id="chest" inputmode="decimal" placeholder=""></label>
+                  <label class="measure-row"><span>ھپ</span><input id="hip" inputmode="decimal" placeholder=""></label>
+                  <label class="measure-row"><span>کمر</span><input id="waist" inputmode="decimal" placeholder=""></label>
+                  <label class="measure-row"><span>گھیرا</span><input id="shirtBottom" inputmode="decimal" placeholder=""></label>
+                </div>
+                <div class="measurement-ledger-title trouser-title">شلوار کی پیمائش <small>انچ میں</small></div>
+                <div class="measurement-ledger-grid">
+                  <label class="measure-row"><span>شلوار لمبائی</span><input id="trouserLength" inputmode="decimal" placeholder=""></label>
+                  <label class="measure-row"><span>پانچہ</span><input id="trouserBottom" inputmode="decimal" placeholder=""></label>
+                </div>
+              </div>
+              <div class="visual-design-board">
+                <div class="visual-board-title">ڈیزائن منتخب کریں <small>ہر تصویر کے نیچے مختصر لفظ (زیادہ سے زیادہ 20 حروف) لکھیں</small></div>
+                <div class="new-design-grid" id="designPickerGrid"></div>
+              </div>
+            </div>
+            <label class="field full instruction-field"><span>خصوصی ہدایات</span><textarea id="notes" rows="8" maxlength="2000" placeholder="نوٹ / خصوصی ہدایات — 200 سے زیادہ حروف لکھ سکتے ہیں"></textarea></label>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="secondary" id="resetFormButton">فارم صاف کریں</button>
+            <button type="submit" class="primary" id="saveOrderButton">✓ آرڈر محفوظ کریں</button>
+          </div>
+          <div class="saved-measurement-panel" id="savedMeasurementPanel" hidden>
+            <div><span>✓</span><p><strong id="savedMeasurementTitle">پیمائش محفوظ ہوگئی</strong><small id="savedMeasurementDetail">اب آپ پیمائش کارڈ پرنٹ کرسکتے ہیں۔</small></p></div>
+            <button type="button" class="primary" id="printLastMeasurementButton">▣ محفوظ پیمائش پرنٹ کریں</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="page" id="statusPage">
+        <div class="status-manager-banner">
+          <div>
+            <span class="eyebrow">QUICK SUIT CONTROL</span>
+            <h3>سوٹ کی حالت اپڈیٹ کریں</h3>
+            <p>رسید نمبر یا گاہک کے نام سے آرڈر تلاش کرکے ایک دباؤ میں نئی حالت منتخب کریں۔</p>
+          </div>
+          <div class="status-manager-symbol">↻</div>
+        </div>
+        <div class="status-summary" aria-label="آرڈر حالت کا خلاصہ">
+          <article><span class="status-dot-card pending"></span><small>زیرِ سلائی</small><strong id="statusPendingCount">۰</strong></article>
+          <article><span class="status-dot-card ready"></span><small>تیار</small><strong id="statusReadyCount">۰</strong></article>
+          <article><span class="status-dot-card packed"></span><small>پیک شدہ</small><strong id="statusPackedCount">۰</strong></article>
+          <article><span class="status-dot-card delivered"></span><small>مکمل</small><strong id="statusDeliveredCount">۰</strong></article>
+        </div>
+        <div class="content-card">
+          <div class="card-heading wrap">
+            <div><h3>Update Suit Status by No. or Name</h3><p>رسید نمبر، نام یا موبائل نمبر لکھیں</p></div>
+          </div>
+          <label class="search-box status-search"><span>⌕</span><input id="statusSearch" placeholder="مثلاً رسید 12 یا گاہک کا نام"></label>
+          <div id="statusResults" class="status-results"></div>
+        </div>
+      </section>
+
+      <section class="page" id="ordersPage">
+        <div class="content-card">
+          <div class="card-heading wrap">
+            <div><h3>تمام آرڈرز</h3><p>گاہک کے نام، موبائل یا رسید نمبر سے تلاش کریں</p></div>
+            <button class="primary compact" data-go="new-order">＋ نیا آرڈر</button>
+          </div>
+          <div class="filters">
+            <label class="search-box"><span>⌕</span><input id="orderSearch" placeholder="ریکارڈ تلاش کریں..."></label>
+            <select id="statusFilter" aria-label="حالت کے مطابق فلٹر">
+              <option value="all">تمام حالتیں</option>
+              <option value="pending">زیرِ سلائی</option>
+              <option value="ready">تیار ہے</option>
+              <option value="packed">پیک شدہ</option>
+              <option value="delivered">ڈیلیور شدہ / مکمل</option>
+            </select>
+          </div>
+          <div id="ordersList" class="records-list spacious"></div>
+        </div>
+      </section>
+
+      <section class="page" id="completedOrdersPage">
+        <div class="completed-banner">
+          <div><span class="eyebrow">محفوظ شدہ ریکارڈ</span><h3>مکمل شدہ آرڈرز</h3><p>ڈیلیوری کے بعد بھی گاہک، پیمائش، ادائیگی اور تمام تفصیل یہاں محفوظ رہتی ہے۔</p></div>
+          <div class="completed-symbol">✓</div>
+        </div>
+        <div class="content-card">
+          <div class="card-heading"><div><h3>ڈیلیور شدہ سوٹ</h3><p>نام، موبائل یا رسید نمبر سے تلاش کریں</p></div></div>
+          <label class="search-box due-search"><span>⌕</span><input id="completedSearch" placeholder="نام، موبائل یا رسید نمبر"></label>
+          <div id="completedList" class="records-list spacious"></div>
+        </div>
+      </section>
+
+      <section class="page owner-private-page" id="moneyPage">
+        <div class="money-private-banner">
+          <div><span class="eyebrow">OWNER ONLY • PRIVATE</span><h3>نجی حساب اور رقم کا انتظام</h3><p>یہ صفحہ صرف مالک کے لیے ہے۔ Worker اور Guest اسے نہیں دیکھ سکتے۔</p></div>
+          <div class="money-lock-symbol">🔒</div>
+        </div>
+        <div class="money-summary-grid">
+          <article><small>کل رقم</small><strong id="moneyTotalAmount">۰ روپے</strong></article>
+          <article class="received"><small>کل وصولی</small><strong id="moneyTotalReceived">۰ روپے</strong></article>
+          <article class="due"><small>کل بقایا</small><strong id="moneyTotalDue">۰ روپے</strong></article>
+          <article class="cost"><small>کل لاگت</small><strong id="moneyTotalCost">۰ روپے</strong></article>
+          <article class="profit"><small>خالص منافع</small><strong id="moneyTotalProfit">۰ روپے</strong></article>
+        </div>
+        <div class="content-card">
+          <div class="card-heading"><div><h3>تمام گاہکوں کا نجی حساب</h3><p>نام، موبائل یا رسید نمبر سے تلاش کرکے رقم درج یا تبدیل کریں</p></div></div>
+          <label class="search-box due-search"><span>⌕</span><input id="moneySearch" placeholder="نام، موبائل یا رسید نمبر"></label>
+          <div id="moneyList" class="money-records-list"></div>
+        </div>
+      </section>
+
+      <section class="page" id="transferPage">
+        <div class="transfer-banner">
+          <div><span class="eyebrow">OWNER CONTROLLED • OFFLINE</span><h3>ریکارڈ شیئر اور وصول کریں</h3><p>Internet کے بغیر Owner کی اجازت سے record یا مکمل backup منتقل کریں۔</p></div>
+          <div class="transfer-symbol">⇄</div>
+        </div>
+
+        <div class="transfer-grid">
+          <article class="transfer-card owner-share-card" id="ownerSharePanel">
+            <div class="transfer-card-heading"><span>۱</span><div><h3>Owner: ریکارڈ شیئر کریں</h3><p>ایک، کئی یا تمام ریکارڈ منتخب کریں</p></div></div>
+            <label class="field"><span>کیا شیئر کرنا ہے؟</span><select id="transferScope"><option value="selected">منتخب ریکارڈ</option><option value="backup">تمام ریکارڈ / مکمل Backup</option></select></label>
+            <div class="transfer-record-picker" id="transferOrderField">
+              <div class="transfer-picker-heading"><strong>ریکارڈ منتخب کریں</strong><span id="transferSelectedCount">۰ منتخب</span></div>
+              <label class="search-box transfer-picker-search"><span>⌕</span><input id="transferRecordSearch" placeholder="نام، موبائل یا رسید نمبر"></label>
+              <label class="transfer-select-all"><input type="checkbox" id="transferSelectAll"><span><b>ALL</b> — تمام محفوظ ریکارڈ منتخب کریں</span></label>
+              <div class="transfer-record-list" id="transferOrderList"></div>
+            </div>
+            <div class="form-grid three transfer-options">
+              <label class="field"><span>اجازت</span><select id="transferPermission"><option value="view">صرف دیکھنے کی اجازت</option><option value="status">Status update کی اجازت</option></select></label>
+              <label class="field"><span>اجازت کا وقت</span><select id="transferDuration"><option value="1800000">30 منٹ</option><option value="3600000">1 گھنٹہ</option><option value="7200000">2 گھنٹے</option><option value="86400000">1 دن</option><option value="2592000000">30 دن</option><option value="31536000000">1 سال</option></select></label>
+              <input type="hidden" id="includeFinancials" value="">
+            </div>
+            <button class="primary full-button" id="createTransferButton">منتخب ریکارڈ Share کریں</button>
+          </article>
+
+          <article class="transfer-card receive-card" id="receiveTransferPanel">
+            <div class="transfer-card-heading"><span>۲</span><div><h3 id="receiveTransferTitle">Record / Backup وصول کریں</h3><p>WhatsApp سے ملا code paste کریں یا transfer file منتخب کریں</p></div></div>
+            <label class="field"><span>Transfer Code</span><textarea id="receivedTransferCode" rows="5" placeholder="BST1 سے شروع ہونے والا code یہاں paste کریں"></textarea></label>
+            <div class="transfer-actions">
+              <button class="primary" id="receiveTransferButton">موصول ریکارڈ کھولیں</button>
+              <label class="secondary file-button">Transfer File منتخب کریں<input type="file" id="transferFileInput" accept="application/json,.json,.bstshare"></label>
+            </div>
+            <div class="worker-access-card" id="workerAccessCard">
+              <span id="workerAccessDot"></span><div><strong id="workerAccessTitle">کوئی ریکارڈ موصول نہیں ہوا</strong><small id="workerAccessDetail">Owner سے record یا backup لیں</small></div>
+            </div>
+            <button class="secondary full-button" id="returnUpdatesButton">اپڈیٹ Owner کو واپس Share کریں</button>
+          </article>
+        </div>
+
+        <div class="transfer-output" id="transferOutputPanel">
+          <div><h3>تیار Transfer Code</h3><p>اگر WhatsApp share خود نہ کھلے تو Copy کرکے بھیج دیں۔</p></div>
+          <textarea id="generatedTransferCode" rows="5" readonly></textarea>
+          <div class="transfer-actions"><button class="primary" id="shareTransferAgainButton">WhatsApp / Share</button><button class="secondary" id="copyTransferCodeButton">Code Copy کریں</button></div>
+        </div>
+      </section>
+
+      <section class="page" id="backupPage">
+        <div class="folder-backup-card">
+          <div class="folder-backup-copy">
+            <div class="backup-icon gold">▣</div>
+            <div><span class="eyebrow">XAMPP SERVER AUTO BACKUP</span><h3>خودکار محفوظ بیک اَپ</h3><p>ہر کامیاب MySQL save کے ساتھ تازہ copy خودکار طور پر XAMPP کے bst/backups فولڈر میں محفوظ ہوگی۔ Browser folder منتخب کرنے کی ضرورت نہیں۔</p></div>
+          </div>
+          <div class="folder-backup-status"><span id="backupFolderDot"></span><strong id="backupFolderStatus">Server backup status چیک ہورہا ہے…</strong></div>
+          <div class="folder-backup-actions">
+            <button class="primary" id="serverBackupNowButton">ابھی Server Backup بنائیں</button>
+            <button class="secondary" id="serverRestoreLatestButton">آخری Server Backup Restore کریں</button>
+          </div>
+          <small class="folder-backup-note">محفوظ جگہ: C:\xampp\htdocs\bst\backups\ — اضافی حفاظت کے لیے نیچے سے JSON backup بھی نکال سکتے ہیں۔</small>
+        </div>
+        <div class="backup-grid">
+          <article class="backup-card">
+            <div class="backup-icon blue">⇩</div>
+            <h3>بیک اَپ محفوظ کریں</h3>
+            <p>تمام گاہکوں، پیمائشوں، آرڈرز اور ادائیگیوں کی ایک محفوظ فائل بنائیں۔</p>
+            <button class="primary" id="exportButton">بیک اَپ فائل نکالیں</button>
+          </article>
+          <article class="backup-card">
+            <div class="backup-icon green">⇧</div>
+            <h3>بیک اَپ بحال کریں</h3>
+            <p>پہلے سے محفوظ بیک اَپ فائل منتخب کرکے تمام ریکارڈ واپس لائیں۔</p>
+            <label class="secondary file-button">بیک اَپ فائل منتخب کریں<input type="file" id="importInput" accept="application/json,.json"></label>
+          </article>
+        </div>
+        <div class="content-card danger-zone">
+          <div><h3>تمام ریکارڈ ختم کریں</h3><p>یہ عمل واپس نہیں ہوگا۔ پہلے بیک اَپ ضرور محفوظ کریں۔</p></div>
+          <button class="danger-button" id="clearDataButton">تمام ڈیٹا ختم کریں</button>
+        </div>
+      </section>
+      <footer class="app-location-footer"><span>⌖</span><strong>برائٹ سٹار ٹیلرز</strong><small>Zab City, Near Tablighi Markaz, 2nd Door, Opposite Qazi Taraf</small></footer>
+    </main>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="modal" id="detailModal" aria-hidden="true">
+    <div class="modal-panel large">
+      <button class="modal-close" data-close="detailModal" aria-label="بند کریں">×</button>
+      <div id="detailContent"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="paymentModal" aria-hidden="true">
+    <div class="modal-panel small">
+      <button class="modal-close" data-close="paymentModal" aria-label="بند کریں">×</button>
+      <h3>نئی ادائیگی درج کریں</h3>
+      <p class="modal-subtitle" id="paymentCustomer"></p>
+      <form id="paymentForm">
+        <input type="hidden" id="paymentOrderId">
+        <div class="due-chip">موجودہ بقایا: <strong id="paymentDue"></strong></div>
+        <label class="field"><span>وصول رقم (روپے) *</span><input type="number" id="paymentAmount" min="1" required></label>
+        <label class="field"><span>تاریخ *</span><input type="date" id="paymentDate" required></label>
+        <label class="field"><span>نوٹ</span><input id="paymentNote" placeholder="اختیاری تفصیل"></label>
+        <button type="submit" class="primary full-button">ادائیگی محفوظ کریں</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="moneyModal" aria-hidden="true">
+    <div class="modal-panel small private-money-modal">
+      <button class="modal-close" data-close="moneyModal" aria-label="بند کریں">×</button>
+      <div class="private-modal-heading"><span>🔒</span><div><small>OWNER ONLY</small><h3>نجی حساب تبدیل کریں</h3></div></div>
+      <p class="modal-subtitle" id="moneyCustomer"></p>
+      <form id="moneyForm">
+        <input type="hidden" id="moneyOrderId">
+        <label class="field"><span>کل رقم (روپے) *</span><input type="number" id="moneyTotalInput" min="0" required></label>
+        <label class="field"><span>کل لاگت / خرچہ (روپے)</span><input type="number" id="moneyCostInput" min="0"></label>
+        <label class="field"><span>اب تک وصول رقم (روپے)</span><input type="number" id="moneyPaidInput" min="0"></label>
+        <div class="money-live-calculation">
+          <div><small>بقایا</small><strong id="moneyDuePreview">۰ روپے</strong></div>
+          <div><small>منافع</small><strong id="moneyProfitPreview">۰ روپے</strong></div>
+        </div>
+        <button type="submit" class="primary full-button">🔒 نجی حساب محفوظ کریں</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div id="printArea" aria-hidden="true"></div>
+
+  <script src="js/config.js?v=2.3.15"></script>
+  <script src="js/core.js?v=2.3.15"></script>
+  <script src="js/utils.js?v=2.3.15"></script>
+  <script src="js/api-client.js?v=2.3.15"></script>
+  <script src="js/auth.js?v=2.3.15"></script>
+  <script src="js/state.js?v=2.3.15"></script>
+  <script src="js/ui-core.js?v=2.3.15"></script>
+  <script src="js/dashboard.js?v=2.3.15"></script>
+  <script src="js/orders.js?v=2.3.15"></script>
+  <script src="js/money.js?v=2.3.15"></script>
+  <script src="js/order-form.js?v=2.3.15"></script>
+  <script src="js/print.js?v=2.3.15"></script>
+  <script src="js/backup.js?v=2.3.15"></script>
+  <script src="js/transfer.js?v=2.3.15"></script>
+  <script src="js/app.js?v=2.3.15"></script>
+</body>
+</html>
